@@ -11,8 +11,8 @@
 - [Prerequisites](#prerequisites)
 - [Technology](#technology)
 - [Installation](#installation)
-- [Running application with snapshot](#run-snapshot)
-- [Running a specific test](#tests)
+- [Running app with snapshot](#running-app-with-snapshot)
+- [Running a specific test](#running-a-specific-test)
 - [Swagger](#swagger)
 - [Environment variables](#environment-variables)
 
@@ -44,7 +44,7 @@ $ mvn clean package
 # to generate the coverage report after testing (available at: target/site/clover/clover/index.html)
 $ mvn clover:clover
 ```
-## Running snapshot
+## Running app with snapshot
 
 ```shell
 # clone the repository and access the directory.
