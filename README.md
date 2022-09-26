@@ -11,6 +11,7 @@
 - [Prerequisites](#prerequisites)
 - [Technology](#technology)
 - [Installation](#installation)
+- [Running application with snapshot](#run-snapshot)
 - [Running a specific test](#tests)
 - [Swagger](#swagger)
 - [Environment variables](#environment-variables)
@@ -26,7 +27,7 @@ This project was started with [Spring Initializr](https://start.spring.io/#!type
 
 ```shell
 # clone the repository and access the directory.
-$ git clone git@github.com:kloem/extend.git && cd extend
+$ git clone https://github.com/roat167/extend.git && cd extend
 
 # download dependencies
 $ mvn install -DskipTests
@@ -42,6 +43,18 @@ $ mvn clean package
 
 # to generate the coverage report after testing (available at: target/site/clover/clover/index.html)
 $ mvn clover:clover
+```
+## Running snapshot
+
+```shell
+# clone the repository and access the directory.
+$ git clone https://github.com/roat167/extend.git && cd extend
+
+# to build snapshot
+$ mvn clean package
+
+# Run
+$ java -jar target/extend-0.0.1-SNAPSHOT.jar
 ```
 
 ## Running a specific test

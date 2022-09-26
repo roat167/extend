@@ -2,6 +2,7 @@ package com.extend.controller;
 
 import com.extend.domain.dto.Transaction;
 import com.extend.domain.service.TransactionService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +23,7 @@ public class TransactionController {
     }
 
     @GetMapping(value = "/{transactionId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(description = "Get transaction detail for given transaction ID")
     public ResponseEntity<Transaction> getTransactionDetails(
             @RequestHeader @NotBlank String accessToken,
             @PathVariable String transactionId) {

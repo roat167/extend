@@ -4,6 +4,7 @@ import com.extend.domain.dto.Transaction;
 import com.extend.domain.dto.VirtualCard;
 import com.extend.domain.service.TransactionService;
 import com.extend.domain.service.VirtualCardsService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -28,12 +29,14 @@ public class VirtualCardController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(description = "Get all virtual cards based on login user")
     public ResponseEntity<List<VirtualCard>> getAllVirtualCards(@RequestHeader @NotBlank String accessToken) {
         log.info("Execute getAllVirtualCard");
         return new ResponseEntity<>(virtualCardsService.getVirtualCards(accessToken), HttpStatus.OK);
     }
 
     @GetMapping(value = "/{virtualCardId}/transactions", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(description = "Get all virtual card' transactions for given virtual card ID")
     public ResponseEntity<List<Transaction>> getVirtualCardTransactions(
             @RequestHeader @NotBlank String accessToken,
             @PathVariable String virtualCardId) {

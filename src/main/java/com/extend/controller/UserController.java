@@ -3,6 +3,7 @@ package com.extend.controller;
 import com.extend.domain.dto.UserRequest;
 import com.extend.domain.dto.UserResponse;
 import com.extend.domain.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +24,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(description = "Return token that can be used as accessToken to other API")
     public ResponseEntity<UserResponse> login(@Valid @RequestBody UserRequest userRequest) {
         UserResponse userResponse = userService.login(userRequest);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
